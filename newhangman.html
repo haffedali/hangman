@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hangman</title>
+  </head>
+  <body>
+
+    <h1>Play game</h1>
+    <span id="letterDisplay">...</span>
+
+    <div class="hangWord">
+    <span id="wordDisplay">...</span>
+    </div>
+
+    <div class="wrongletters">
+    <span id="guessDisplay">...</span>
+    </div>
+
+
+    <script>
+
+            var myWords = ["brockhampton", "pokemon", "coffee"];
+            var randWord = myWords[Math.floor(Math.random() * myWords.length)];
+            var loggedKeyDisplay = document.getElementById("letterDisplay");
+            var guessDisplay = document.getElementById("guessDisplay");
+            var wordDisplay = document.getElementById("wordDisplay");
+            var randWordPlay = []
+            var guessedLetter = []
+            let words = []
+            var placer;
+        
+
+
+            // functions
+            function remove(array, element) {
+                return array.filter(e => e !== element);
+            }   
+
+            function letterLogger(x) {
+                for (var i = 0; i < randWord.length; i++) {
+                    randWordPlay.push(x[i]);
+                }
+            };
+        
+            function letterChecker(x) {
+                for (var i = 0; i < randWord.length; i++) {
+                    if (x === randWordPlay[i]) {
+                        randWordPlay = remove(randWordPlay, x);
+                        for (var i=0; i < words.length; i++){
+                            if (randWord[i] == x) {
+                                words[i] = x;
+                                wordDisplay.textContent = words;
+                            }
+                        } 
+                    };
+         
+                    if (randWordPlay.length > 0) {
+                    }
+                    
+                    if (randWordPlay.length === 0) {
+                        wordDisplay.textContent = "YOU WIN";
+                    }
+                };
+            };
+
+            function guessed(x) {
+                if (guessedLetter.indexOf(x) === -1 && randWordPlay.indexOf(x) === -1) {
+                    guessedLetter.push(x);
+                    console.log(guessedLetter);
+                    guessDisplay.textContent = guessedLetter;   
+                }
+            }
+
+            function emptySpaces() {
+                for (var i=0; i < randWord.length; i++) {
+                    words.push("_");
+                    wordDisplay.textContent = words;
+                }
+            }
+
+
+            letterLogger(randWord);
+            emptySpaces();
+
+            //program start
+            document.onkeyup = function(event) {
+                loggedKeyDisplay.textContent = event.key;
+                loggedKey = event.key;
+                console.log(loggedKey);
+
+                // Works on the first loggedKey, but not others.
+                //if (guessedLetter.indexOf(loggedKey) === -1 && randWordPlay.indexOf(loggedKey) === -1) {
+                //    guessedLetter.push(loggedKey);
+                //};
+
+                guessed(loggedKey);
+                letterChecker(loggedKey);
+                console.log(randWordPlay);
+                console.log(words);
+                console.log(randWord);
+            };
+        
+
+</script>
+</body>
+</html>
