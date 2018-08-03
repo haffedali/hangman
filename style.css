@@ -4,7 +4,7 @@
 }
 .navbar {
     margin: auto;
-    width: 500px;
+    width: 100%;
     background-color: black;
 }
 
@@ -28,6 +28,9 @@
 
 .gamedis {
     margin: auto;
+    padding: 15px;
+    background-color: grey;
+
 
 }
 
