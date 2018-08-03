@@ -1,3 +1,7 @@
+.jumbotron {
+    background-image: url('http://superwall.us/wallpaper/matrix_blue_screen_raining_entertainment-oDUw.jpg');
+    height: 960px;
+}
 .navbar {
     margin: auto;
     width: 500px;
@@ -17,6 +21,8 @@
     width: 400px;
     border-style: solid;
     border-width: 1px;
+    background-color: white;
+    height: 300px;
 
 }
 
@@ -27,4 +33,8 @@
 
 .guessletter {
     margin: auto;
+}
+
+.row {
+    height: 33%;
 }
