@@ -3,18 +3,36 @@
   <head>
     <meta charset="UTF-8">
     <title>Hangman</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+      <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-light bg-light">
+                <span class="navbar-brand mb-0 h1">Super Hacker</span>
+            </nav>
+        </div>
 
-    <h1>Play game</h1>
-    <span id="letterDisplay">...</span>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container gamebox">
+            <div class="row">
+                <span id="letterDisplay">...</span>
+            </div>
 
-    <div class="hangWord">
-    <span id="wordDisplay">...</span>
+            <div class="row">
+            <div class="hangWord">
+                <span id="wordDisplay">...</span>
+            </div>
+            </div>
+
+            <div class="row">
+            <div class="wrongletters">
+                <span id="guessDisplay">...</span>
+            </div>
+        </div>
     </div>
-
-    <div class="wrongletters">
-    <span id="guessDisplay">...</span>
+    </div>
     </div>
 
 
